@@ -4,20 +4,12 @@ def stock_picker(array)
   best_sell = 0
   best_buy = 0
 
-
   array.each_with_index do |val, idx|
-    puts "#{val} is the current buy variable?"
-    temp_array.each_with_index do |temp_val, temp_idx|
-      puts "#{temp_val} is the current sell variable?"
-      if val - temp_val > best_profit
-        best_buy = idx
-        best_sell = temp_idx
-        best_profit = val - temp_val
-        puts "the best profit is currently: #{best_profit}"
-      end
-
+    puts "#{idx} is the outer index and it's value is #{val}"
+    temp_val = idx+1
+    (temp_val..array[-1]).each do |temp_idx|
+      puts "#{temp_idx} is the inner index"
     end
-
   end
   
   puts best_buy
