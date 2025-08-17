@@ -3,9 +3,10 @@ def stock_picker(array)
   best_sell = 0
   best_buy = 0
 
-  array.each_with_index do |val, idx|
-    (idx+1..array.last).each do |temp_idx|
-      profit = val - array[temp_idx]
+  array.each_with_index do |val, idx|  # iterates over each element in the array
+    (idx+1...array.length).each do |temp_idx| # temp_idx is given the value of the outer arrays index plus 1 and the loop goes until the end of the array (array.length)
+      temp_val = array[temp_idx] # assigns temp_val to the value of the array at index temp_idx (outer index + 1)
+      profit = temp_val - val # profit is assinged to temp_val - val
       if profit > best_profit
         best_buy = idx
         best_sell = temp_idx
